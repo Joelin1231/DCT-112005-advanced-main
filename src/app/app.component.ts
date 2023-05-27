@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { chartPieDemo } from './chart-pie-demo';
 import { chartAreaDemo } from './chart-area-demo';
 
@@ -13,6 +13,7 @@ import { chartAreaDemo } from './chart-area-demo';
 })
 export class AppComponent implements OnInit {
   title = 'demo2';
+  types:string[] = ['','1','2'];
 
   ngOnInit(): void {
     chartPieDemo();

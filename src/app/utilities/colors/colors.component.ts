@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-colors',
@@ -9,5 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./colors.component.css']
 })
 export class ColorsComponent {
-
+  route = inject(ActivatedRoute);
+  type: string | null = '';
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      // console.log(params.get('type'));
+      this.type = params.get('type') || '';
+    })
+  }
 }
