@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of data">
+          <tr *ngFor="let item of data$ | async">
             <td>{{item.Name}}</td>
             <td>{{item.Position}}</td>
             <td>{{item.Office}}</td>
